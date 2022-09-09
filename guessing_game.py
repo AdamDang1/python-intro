@@ -6,11 +6,13 @@ print("Okay " + player_name + ", I'm thinking of a number between 1 and 100.\n" 
 number_of_tries = 0
 
 while number_of_tries < 100:
-    guess = int(input("Your guess?\n"))
+    guess = int(input("Your guess?"))
     number_of_tries += 1
     if guess < number:
         print("Your guess is too low, try again.")
-    elif guess > number:
+    if guess > number:
         print("Your guess is too high, try again.")
-    else:
-        print("Well done, " + player_name + "! You found my number in " + str(number_of_tries) + " tries!")
+    if guess == number:
+        break
+if guess == number:
+    print("Well done, " + player_name + "! You found my number in " + str(number_of_tries) + " tries!")
